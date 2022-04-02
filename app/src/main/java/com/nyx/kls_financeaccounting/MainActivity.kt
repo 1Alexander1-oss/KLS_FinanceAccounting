@@ -9,17 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity(), FinanceCategoryClickListener {
 
     private lateinit var recycler: RecyclerView
-    lateinit var button: Button
+    lateinit var addButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button = findViewById(R.id.add_button)
-
         recycler = findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.adapter = FinanceCategoryAdapter(financeCategories, this)
+
+        addButton = findViewById(R.id.add_button)
+        addButton.setOnClickListener { showAddCategoryDialog() }
     }
 
     private val financeCategories = listOf(
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity(), FinanceCategoryClickListener {
         FinanceCategory(3, "Rent", 20.0)
     )
 
-    override fun categoryClick(id: Int) {}
+    private fun showAddCategoryDialog() {
+        val dialog = AddCategoryDialog()
+        dialog.show(supportFragmentManager, "tag")
+    }
 
+    override fun categoryClick(id: Int) {}
 }
