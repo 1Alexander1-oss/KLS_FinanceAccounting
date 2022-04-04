@@ -3,14 +3,20 @@ package com.nyx.kls_financeaccounting
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class FinanceCategoryViewHolder(
     itemView: View,
     private val listener: FinanceCategoryClickListener,
-) : RecyclerView.ViewHolder(itemView) {
+
+    ) : RecyclerView.ViewHolder(itemView) {
     fun setContent(financeCategory: FinanceCategory) {
+        val deleteButton = itemView.findViewById<Button>(R.id.delete_button)
+        deleteButton.setOnClickListener {
+            listener.onDeletePressed(financeCategory)
+        }
 
         val categoryTextView = itemView.findViewById<TextView>(R.id.title)
         categoryTextView.text = financeCategory.name

@@ -6,4 +6,5 @@ import com.nyx.kls_financeaccounting.FinanceCategory
 interface Repository {
     fun getCategories(): LiveData<List<FinanceCategory>>
     fun addCategory(category: FinanceCategory)
+    fun deleteCategory(category: FinanceCategory)
 }

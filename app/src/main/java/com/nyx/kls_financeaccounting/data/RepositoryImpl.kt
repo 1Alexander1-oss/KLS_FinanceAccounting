@@ -18,4 +18,10 @@ class RepositoryImpl(
     override fun getCategories(): LiveData<List<FinanceCategory>> {
         return dao.getCategories()
     }
+
+    override fun deleteCategory(category: FinanceCategory) {
+        CoroutineScope(Dispatchers.IO).launch {
+            dao.deleteCategory(category)
+        }
+    }
 }

@@ -3,10 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/rocks/StudioProjects/KLS_FinanceAccounting/app/src/main/res/layout/accounting_item.xml" value="0.253125" />
-        <entry key="..\:/Users/rocks/StudioProjects/KLS_FinanceAccounting/app/src/main/res/layout/accounting_model.xml" value="0.264" />
-        <entry key="..\:/Users/rocks/StudioProjects/KLS_FinanceAccounting/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/rocks/StudioProjects/KLS_FinanceAccounting/app/src/main/res/layout/add_category_dialog.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KLS_FinanceAccounting/app/src/main/res/layout/accounting_item.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KLS_FinanceAccounting/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/KLS_FinanceAccounting/app/src/main/res/layout/add_category_dialog.xml" value="0.1259259259259259" />
       </map>
     </option>
   </component>

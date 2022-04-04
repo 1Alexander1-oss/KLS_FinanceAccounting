@@ -4,10 +4,17 @@
     android:layout_height="80dp"
     android:orientation="horizontal">
 
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="422dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Delete" />
+
     <TextView
         android:id="@+id/title"
-        android:layout_width="524dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Title"
         android:textSize="36sp" />
@@ -15,7 +22,7 @@
     <TextView
         android:id="@+id/percent"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Percent"
         android:textSize="36sp" />

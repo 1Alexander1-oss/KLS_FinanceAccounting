@@ -17,4 +17,8 @@ class MainViewModel(
     fun getCategories(): LiveData<List<FinanceCategory>> {
         return repository.getCategories()
     }
+
+    fun deleteCategory(category: FinanceCategory) {
+        repository.deleteCategory(category)
+    }
 }

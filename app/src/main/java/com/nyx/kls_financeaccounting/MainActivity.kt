@@ -65,4 +65,8 @@ class MainActivity : AppCompatActivity(), FinanceCategoryClickListener {
     }
 
     override fun categoryClick(id: Int) {}
+
+    override fun onDeletePressed(category: FinanceCategory) {
+        viewModel.deleteCategory(category)
+    }
 }
