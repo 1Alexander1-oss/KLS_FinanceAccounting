@@ -5,16 +5,33 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.nyx.kls_financeaccounting.data.AppDatabase
+import com.nyx.kls_financeaccounting.data.RepositoryImpl
 
 class MainActivity : AppCompatActivity(), FinanceCategoryClickListener {
     private lateinit var recycler: RecyclerView
     private lateinit var addButton: Button
+    private lateinit var viewModel: MainViewModel
 
-    private val viewModel = MainViewModel(RepositoryImpl())
+    private fun initDatabase() {
+        val database = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java,
+            "app_database"
+        ).build()
+
+        viewModel = MainViewModel(
+            repository = RepositoryImpl(
+                dao = database.categoryDao()
+            )
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initDatabase()
 
         recycler = findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(this)

@@ -18,7 +18,9 @@ class FinanceCategoryViewHolder(
         categoryTextView2.text = financeCategory.ratio.toString()
 
         itemView.setOnClickListener {
-            listener.categoryClick(financeCategory.id)
+            financeCategory.id?.let { id ->
+                listener.categoryClick(id)
+            }
         }
     }
 }

@@ -29,7 +29,6 @@ class AddCategoryDialog(
 
             onCategoryCreated(
                 FinanceCategory(
-                    id = hashCode(),
                     name = categoryName,
                     ratio = 13.456
                 )
